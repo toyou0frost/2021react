@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sunrin</title>
+
+  <style>
+    *,
+    *::before,
+    *::after{
+      margin: 0;
+      padding: 0;
+
+      box-sizing: border-box;
+      font-family: 'Dotum', '돋움', 'NanumGothic', '나눔고딕', sans-serif;
+    }
+
+    body>*:not(footer) {
+      width: 950px;
+      margin:0 auto;
+    }
+  
+    header{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    nav>ul{
+      width: 100%;
+      display: flex;
+      width: 100%;
+      list-style: none;
+    }
+
+    nav>ul>li>a+ul{
+      display: none;
+    }
+
+    nav > ul > li{
+      flex: 1; 
+    }
+    ul{
+      list-style: none;
+    }
+    nav > ul > li > a{
+      display: inline-block;
+      width:  100%;
+      color: #555;
+      text-decoration: none;
+      font-size: 11px;
+      line-height: 68px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    main{
+      display: grid;
+      /*grid-template: 315px 315px 320px;
+      grid-template-columns: 305px 305px 400px;*/
+      grid-template-areas: 
+      "banner banner notice1"
+      "banner banner notice2"
+      "calendar menu ad"
+    }
+
+    #banner{
+      grid-area: banner;
+    }
+
+    #notice1{
+      grid-area: notice1;
+    }
+
+    #notice2{
+      grid-area: notice2;
+    }
+
+    #calendar{
+      grid-area: calendar;
+    }
+
+    #menu{
+      grid-area: menu;
+    }
+
+    #ad{
+      grid-area: ad;
+    }
+
+    footer{
+      background-color: #e5e6e8;
+    }
+    footer>div{
+      display: flex;
+      width: 950px;
+      margin: 0 auto;
+    }
+
+    #calendar{
+      width: 300px;
+      height: 400px;
+      display: block;
+    }
+
+    #calendar > h1{
+      width: 90%;
+      height: 10%;
+      font-size: 0.9em;
+      padding-top: 20px;
+    }
+
+    #calendar > div:not(:nth-child(3)){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      height: 60%;
+      border: 1px solid #e2e2e2;
+    }
+
+    #calendar > div:nth-child(3){
+      height: 7%;
+      width: 90%;
+      background-color: #e2e2e2;
+    }  
+
+    #calendar > div:nth-child(4){
+      height: 10%;
+      border: none;
+    }
+    
+    #calendar > div:nth-child(3) > span{
+      color: rgb(46, 46, 46);
+      padding-right: 9px;
+      font-size: 0.8em;
+      padding: 10px;
+    }
+
+    #calendar > div > div{
+      display: inline-block;
+      font-size: 12px;
+      color: rgb(46, 46, 46);
+      margin-top: 40px;
+      font-family: Dotum, 돋움, sans-serif;
+    }
+
+    #calendar > div > h1{    
+      font-size: 120px;
+      line-height: 120px;
+      color: #efb53b;
+      padding: 8px 0;
+    }
+
+    #calendar > div > :nth-child(3){
+      position: relative;
+      color: #efb53b;
+      font-size: 30px;
+      top: -95%;
+      right: -40%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="assets/sunrin-logo.png" alt="test">
+    <div>
+      <button>사이트맵</button>
+      <button>홈</button>
+      <button>로그인</button>
+      <button>회원가입</button>
+      <input type="text" id="search">
+      <label for="search"><img src="assets/btn_search.gif" alt=""></label>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li>
+        <a href="">학교소개</a>
+        <ul>
+          <li>비전</li>
+          <li>교육목표</li>
+          <li>학교연혁</li>
+        </ul>
+      </li>
+      <li>
+        <a href="">학교마당</a>
+      </li>
+      <li>
+        <a href="">학생/학부모마당</a>
+      </li>
+      <li>
+        <a href="">취업/진학</a>
+      </li>
+      <li>
+        <a href="">입학</a>
+      </li>
+      <li>
+        <a href="">학교평가</a>
+      </li>
+      <li>
+        <a href="">SW영재원</a>
+      </li>
+      <li>
+        <a href="">사이트바로가기</a>
+      </li>
+      <li>
+        <a href="">온라인 수업</a>
+      </li>
+      <li>
+        <a href="">학력평가</a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <img src="assets/main-banner.png" alt="" id="banner">
+    <div class="list box" id="notice1">
+      <h1>공지/행사</h1>
+      <ul>
+        <li class="new">
+          <span>공지사항 1 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-06-04</time>
+        </li>
+        <li class="new">
+          <span>공지사항 2 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-05-28</time>
+        </li>
+        <li class="new">
+          <span>공지사항 3 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-05-24</time>
+        </li>
+        <li class="new">
+          <span>공지사항 4 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-05-21</time>
+        </li>
+      </ul>
+    </div>
+    <div class="list box" id="notice2">
+      <h1>가정 통신문</h1>
+      <ul>
+        <li class="new">
+          <span>가정통신 1 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-06-04</time>
+        </li>
+        <li class="new">
+          <span>가정통신 2 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-05-28</time>
+        </li>
+        <li class="new">
+          <span>가정통신 3 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-05-26</time>
+        </li>
+        <li class="new">
+          <span>가정통신 4 - 어쩌구 저쩌구...</span>
+          <span>New</span>
+          <time>2021-05-23</time>
+        </li>
+      </ul>
+    </div>
+    <div class="box" id="calendar">
+      <h1>이달의 일정</h1>
+      <div>
+        <div>
+          <sapn>2021-06.</sapn>
+        </div>
+        <h1>10</h1>
+        <div>+</div>
+      </div>
+      <div><span>일정이 존재하지 않습니다.</span></div>
+      <div></div>
+    </div>
+    <div class="box" id="menu">
+      <h1>
+        오늘의 급식
+        <div>+</div>
+      </h1>
+      <div>
+        <img src="assets/school_menu_thumbnail.jpeg" alt="">
+        <ul>
+          <li class="open">
+            <div>
+              <span>2021.06.09</span>
+              <span>▼</span>
+              <span>▲</span>
+            </div>
+            <div>
+              고추참치덮밥
+              뿌링클치즈소떡
+              브로콜리땅콩무침
+              계란후라이
+              깍두기
+              트로피카에이드(망고,복숭아)
+              (추가찬)된장국
+            </div>
+          </li>
+          <li class="close">
+            <div>
+              <span>2021.06.10</span>
+              <span>▼</span>
+            </div>
+          </li>
+          <li class="close">
+            <div>
+              <span>2021.06.11</span>
+              <span>▼</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="box ad" id="ad">
+      <img src="assets/ad1.gif" alt="">
+    </div>
+  </main>
+  <aside></aside>
+  <footer>
+    <div>
+        <img src="assets/sunrin-logo.png" alt="">
+        <div>
+          <div></div>
+          <address>[04314]서울 용산구 원효로97길 33-4 (청파동3가, 선린인터넷고등학교)</address>
+          <div>대표전화) 02-713-6211</div>
+          <div>팩스) 02-704-0960</div>
+          <div>Copyright COPYRIGHT(C) SUNRIN INTERNET HIGHSCHOOL. ALL RIGHT RESERVED.</div>
+        </div>
+    </div>
+  </footer>
+</body>
+
+</html>
